@@ -88,6 +88,8 @@
 		19E4F39B27E0C9EC008CC815 /* BoxAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E4F39A27E0C9EC008CC815 /* BoxAboutView.swift */; };
 		19E4F39D27E0CA35008CC815 /* AboutContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E4F39C27E0CA35008CC815 /* AboutContentView.swift */; };
 		19E4F39F27E0CC14008CC815 /* SlideOverCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E4F39E27E0CC14008CC815 /* SlideOverCard.swift */; };
+		9852372D27F249CB00938997 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9852372C27F249CB00938997 /* Notification.swift */; };
+		9852372F27F249D300938997 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9852372E27F249D300938997 /* NotificationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +166,8 @@
 		19E4F39A27E0C9EC008CC815 /* BoxAboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxAboutView.swift; sourceTree = "<group>"; };
 		19E4F39C27E0CA35008CC815 /* AboutContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutContentView.swift; sourceTree = "<group>"; };
 		19E4F39E27E0CC14008CC815 /* SlideOverCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOverCard.swift; sourceTree = "<group>"; };
+		9852372C27F249CB00938997 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		9852372E27F249D300938997 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +231,7 @@
 				195A6C1427B52BA1008527B4 /* HeadSocial.swift */,
 				195A6C0C27B51988008527B4 /* TextFieldView.swift */,
 				195A6BFA27B518EB008527B4 /* BackgroundImage.swift */,
+				9852372E27F249D300938997 /* NotificationView.swift */,
 				19A7846C27C38E0800238D45 /* AnnotationView.swift */,
 				19AE656627BA9484002527A7 /* Box */,
 			);
@@ -324,6 +329,7 @@
 				19673B0127ABD07400C79631 /* Box.swift */,
 				19673B0327ABD08200C79631 /* NewBox.swift */,
 				19673B0527ABD09E00C79631 /* Mark.swift */,
+				9852372C27F249CB00938997 /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -456,6 +462,7 @@
 				195A6C1E27B5B07A008527B4 /* ImageEditView.swift in Sources */,
 				197A12F027A5967F003B3FBA /* ContentView.swift in Sources */,
 				19E4F39D27E0CA35008CC815 /* AboutContentView.swift in Sources */,
+				9852372F27F249D300938997 /* NotificationView.swift in Sources */,
 				195A6C2227B6BA69008527B4 /* HeadLittle.swift in Sources */,
 				19A7847927C3D49100238D45 /* ArtCreatorViewModel.swift in Sources */,
 				19A7846F27C3B24500238D45 /* ListAnnotationsView.swift in Sources */,
@@ -473,6 +480,7 @@
 				191D389827BFA7950007645C /* NewBoxCell.swift in Sources */,
 				195A6BFD27B5191B008527B4 /* DescriptionView.swift in Sources */,
 				19E2650327E8AD710019EC8C /* SwipeView.swift in Sources */,
+				9852372D27F249CB00938997 /* Notification.swift in Sources */,
 				19673B2227AC09D100C79631 /* MarkViewModel.swift in Sources */,
 				1973B19527B0333B008ACE58 /* SupportView.swift in Sources */,
 				195A6C1127B51FA9008527B4 /* RegisterView.swift in Sources */,

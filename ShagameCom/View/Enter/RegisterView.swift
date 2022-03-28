@@ -19,6 +19,7 @@ struct RegisterView: View {
     @State private var passwordConformed: String = ""
     @State private var showAlert: Bool = false
     @State private var showLoginView = false
+    @State private var offsetValue: CGFloat = 0.0
     
    // @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var viewModel: AuthViewModel
@@ -73,6 +74,8 @@ struct RegisterView: View {
                 )
             }
         }
+        .frame(height: HEIGHT * 0.8)
+        .keyboardSensible($offsetValue)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {

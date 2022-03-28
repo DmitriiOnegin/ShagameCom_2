@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    @State private var offsetValue: CGFloat = 0.0
     
    
     var title = "Вход"
@@ -51,7 +52,8 @@ struct LoginView: View {
                 Image("btn - Login")
             }
         }
-            
+        .frame(height: HEIGHT * 0.8)
+        .keyboardSensible($offsetValue)
         }
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)

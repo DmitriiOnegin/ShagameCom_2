@@ -7,21 +7,10 @@
 
 import SwiftUI
 
-struct SlideOverCard2: View {
-    
-    var body: some View {
-        VStack{
-//            Spacer()
-//        SwipeView()
-        }.frame(maxWidth: .infinity,
-                maxHeight: .infinity,
-                alignment: .bottom)
-            .ignoresSafeArea(edges: .bottom)
-    }
-}
-
 struct SwipeView<Content: View> : View{
-    @State var height: CGFloat = 90
+    @State var height: CGFloat = HEIGHT * 0.09
+    @State var text: String = "ПОКАЗАТЬ СПИСОК"
+    @State var isShow: Bool = true
     let handleThickness = CGFloat(5.00)
     var minHeight: CGFloat { HEIGHT * 0.1 }
     var maxHeight: CGFloat { HEIGHT * 0.75 }
@@ -34,11 +23,14 @@ struct SwipeView<Content: View> : View{
                 RoundedRectangle(cornerRadius: handleThickness / 2.0)
                     .frame(width: 36, height: handleThickness)
                     .foregroundColor(Color.gray)
-                    .padding(5)
-                Text("ПОКАЗАТЬ СПИСОК")
-                    .font(fontMedium16)
-                    .foregroundColor(.customRed)
-                
+                    .padding(.top, 15)
+                if isShow{
+                Text(text)
+                        .font(fontMedium16)
+                        .foregroundColor(.customRed)
+                        .padding(.top, 10)
+                        .padding(.bottom, 20)
+                }
                 self.content()
                     .clipped()
                 
@@ -80,6 +72,12 @@ struct SwipeView<Content: View> : View{
                 
                 withAnimation(Animation.easeInOut(duration: 0.3)) {
                     height = finalHeight
+                }
+                
+                if height == minHeight {
+                    isShow = true
+                } else {
+                    isShow = false
                 }
             }
     }

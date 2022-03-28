@@ -101,3 +101,4 @@ struct RegisterView: View {
     }
 }
 
+//print("hello")

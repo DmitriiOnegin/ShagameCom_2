@@ -12,18 +12,6 @@ struct BoxCellOwnProfile: View {
     let box: Box
     
     var body: some View {
-//        VStack(alignment: .center, spacing: 17) {
-//            Image("TestImage")
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: WIDTH / 5)
-//            Text(box.title)
-//                .font(fontBold12)
-//                .multilineTextAlignment(.center)
-//                .lineLimit(2)
-//                .frame(width: WIDTH / 5)
-//            Image("check 1")
-//        }
         VStack(alignment: .center, spacing: 17) {
             Image("TestImage")
                 .resizable()

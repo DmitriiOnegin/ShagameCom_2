@@ -12,67 +12,7 @@ struct BoxCellMap: View {
     @ObservedObject var viewModel: BoxViewModel
  
     var body: some View {
-//        HStack(spacing: 15){
-//            Image("TestImage")
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: WIDTH / 5)
-//                .overlay(
-//                    Button(action: {
-//                        viewModel.isFavoritBox()
-//                    }, label: {
-//                        Image(viewModel.didFavorite ? "heart 2" : "heart 3")
-//                    })
-//                   )
-//            VStack{
-//                HStack(spacing: 15){
-//                    VStack{
-//                        Text(viewModel.box.title)
-//                            .font(fontBold16)
-//                            .padding(.bottom)
-//                        Text(viewModel.box.ownerFullName)
-//                            .font(fontLight12)
-//                            .padding(.bottom)
-//                        Text("\(viewModel.box.totalTime) минут")
-//                            .font(fontLight12)
-//                            .foregroundColor(.red)
-//                            .padding(.bottom)
-//                    }
-//                    Spacer()
-//                    VStack{
-//                        Image(viewModel.isMarshrut ? "navigate" : "")
-//                        Image("rate")
-//                        Text(viewModel.totalRatingString)
-//                        Text("\(viewModel.box.totalViews)")
-//
-//                    }
-//                    .foregroundColor(.red)
-//                }
-//                HStack(spacing: 15){
-//                    NavigationLink {
-//                        BoxMainView(viewModel: viewModel)
-//                    } label: {
-//                        Image("btn - BoxCellMap")
-//                    }
-//
-//                    VStack{
-//                        Button {
-//
-//                        } label: {
-//                            Image("next 1")
-//                        }
-//                        Text("поделиться")
-//                            .font(fontLight12)
-//                            .foregroundColor(.red)
-//                    }
-//
-//                }
-//            }
-//        }
-//
-//        .padding()
-//        .background(Color.white.cornerRadius(25))
-        
+
         VStack{
         HStack(alignment: .center){
             Spacer()
@@ -142,7 +82,7 @@ struct BoxCellMap: View {
                 HStack(spacing: 18){
                     NavigationLink {
                     //    BoxMainView(viewModel: viewModel)
-                        BoxAboutView()
+                        BoxAboutView(viewModel: viewModel)
                     } label: {
                         Image("btn - BoxCellMap")
                             .scaleEffect(1.1)

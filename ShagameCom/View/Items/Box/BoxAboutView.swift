@@ -11,6 +11,8 @@ struct BoxAboutView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var navigationViewModel: NavigationViewModel
+    
+    @ObservedObject var viewModel: BoxViewModel
 
     @State private var showMainMenu = false
     @State private var mainCondition = false
@@ -21,7 +23,7 @@ struct BoxAboutView: View {
     var body: some View {
         
         ZStack{
-            VStack{
+            VStack(spacing: 0){
                 HeadLittle(title: "Ахматова: я была дерзкой")
                 ScrollView{
                    
@@ -56,6 +58,7 @@ struct BoxAboutView: View {
                                     }.padding(.top, 20)
                                     Button(action: {}) {
                                         Text("Дина Верютина")
+                                            .underline(true, color: .customGray)
                                             .font(fontLight16)
                                             .foregroundColor(.customGray)
                                     }.padding(.top, 10)
@@ -78,27 +81,30 @@ struct BoxAboutView: View {
                                             .foregroundColor(.customRed)
                                     }.padding(.top, 20)
                                     VStack(spacing: 5){
-                                        Button(action: {}) {
+                                        NavigationLink {
+                                            BoxMapView()
+                                        } label: {
                                             Image("btn - Edit Profile-5")
                                         }
                                         
-                                        Button(action: {}) {
+                                        NavigationLink {
+                                            BoxPlayerView(box: viewModel.box)
+                                        } label: {
                                             Image("btn - Edit Profile-6")
-                                        }.padding(.top, 10)
+                                        }
+                                        .padding(.top, 10)
+                                        
                                         Button(action: {}) {
                                             Image("btn - Edit Profile-7")
                                         }
                                     }.padding(.top, 20)
+                                        .padding(.bottom, 60)
                                     
                                 }
                                 Spacer()
                             }
-                            
                         }
-                        
-                    
                         }
-                       
                 }
                 .frame(maxHeight: 3000)
             }
@@ -131,14 +137,7 @@ struct BoxAboutView: View {
             }
         }
         .ignoresSafeArea()
-        
-        
     }
 }
 
 
-struct BoxAboutView_Previews: PreviewProvider {
-    static var previews: some View {
-        BoxAboutView()
-    }
-}

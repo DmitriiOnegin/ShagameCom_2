@@ -23,7 +23,6 @@ struct SelfProfileView: View {
         self.viewModel = SelfProfileViewModel(allBoxes: allBoxes)
     }
     
-    
     var body: some View {
         ZStack{
             
@@ -62,26 +61,26 @@ struct SelfProfileView: View {
                                     VStack(spacing: 10){
                                         Text("Пройденных \nшагов")
                                             .font(fontLight12)
-                                            .foregroundColor(.customRed)
                                             .multilineTextAlignment(.center)
                                         Text("\(viewModel.user.countTotalSteps ?? 0)")
+                                            .font(fontBold16)
                                     }
                                     VStack(spacing: 10){
                                         Text("Прослушанных \nаудиобоксов")
                                             .font(fontLight12)
-                                            .foregroundColor(.customRed)
                                             .multilineTextAlignment(.center)
                                         Text("\(viewModel.user.countListenBoxes ?? 0)")
-                                        //  Text("\(viewModel.authViewModel.currentUser?.countListenBoxes ?? 0)")
+                                            .font(fontBold16)
                                     }
                                     VStack(spacing: 10){
                                         Text("Созданных \nаудиобоксов")
                                             .font(fontLight12)
-                                            .foregroundColor(.customRed)
                                             .multilineTextAlignment(.center)
                                         Text("\(viewModel.user.countOwnBoxes ?? 0)")
+                                            .font(fontBold16)
                                     }
                                 }
+                                .foregroundColor(.sh_basicRed)
                                 
                                 HStack{
                                     Text("Мои аудиобоксы")

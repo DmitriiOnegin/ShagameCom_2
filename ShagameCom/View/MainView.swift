@@ -14,6 +14,8 @@ struct MainView: View {
     
     @ObservedObject var viewModel = BoxesViewModel.shared
     
+    @ObservedObject var viewModelScreen = DescriptionScreenViewModel()
+    
     @State private var showMainMenu = false
     
     init(authViewModel: AuthViewModel) {
@@ -21,38 +23,44 @@ struct MainView: View {
     }
     
     var body: some View {
-        ZStack{
+        
+        NavigationView {
             
-            NavigationView {
+            ZStack{
+                BackgroundImage(id: viewModelScreen.descriptionScreen.titul.id)
+               
                 VStack{
-                    
-                    VStack(spacing: 20){
-                        Text("MainView")
-                        Button {
-                            viewModel.fetchAllBoxes()
-                        } label: {
-                            Text("fetchAllBoxes")
-                        }
-                       
+                    Spacer()
+                    Image(viewModelScreen.descriptionScreen.titul.mainImage)
+                        .frame(width: WIDTH * 0.68, height: HEIGHT * 0.46)
+                        .scaledToFill()
+                        
+                    Spacer()
+                    Group{
+                        Text(viewModelScreen.descriptionScreen.titul.title)
+                            .font(fontBold16)
+                            .lineLimit(10)
+                            .foregroundColor(viewModelScreen.descriptionScreen.titul.id == 0 ? .white : .black)
+                            .frame(height: HEIGHT / 17)
+                    Spacer()
+                        Text(viewModelScreen.descriptionScreen.titul.subTitle)
+                            .font(fontLight16)
+                            .foregroundColor(viewModelScreen.descriptionScreen.titul.id == 0 ? .white : .black)
+                            .lineLimit(10)
+                            .multilineTextAlignment(.center)
+                            .frame(height: HEIGHT / 6)
                     }
-                    
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Button {
-                                showMainMenu.toggle()
-                            } label: {
-                                Image(showMainMenu ? "close" : "burger menu")
-                            }
-                        }
-                        //                    ToolbarItem(placement: .navigationBarLeading) {
-                        //                        Button {
-                        //
-                        //                        } label: {
-                        //                            Image("go back")
-                        //                        }
-                        //                    }
+//                    .padding(30)
+                    Spacer()
+                    Image("shg tag big")
+                    Spacer()
+                    Button {
+                        navigationViewModel.navigation = .audioteka
+                        navigationViewModel.showLink = true
+                    } label: {
+                        Image("btn - MainView")
                     }
-                    
+                    Spacer()
                     NavigationLink(isActive: $navigationViewModel.showLink, destination: {
                         switch navigationViewModel.navigation {
                         case .profile:
@@ -69,26 +77,30 @@ struct MainView: View {
                             do {}
                         }
                     }, label: {EmptyView()})
-                    
+                }
+                
+                if showMainMenu {
+                    VStack{
+                        HStack{
+                            Spacer()
+                            MainMenu(showMainMenu: $showMainMenu)
+                        }
+                        Spacer()
+                    }
                 }
             }
-            if showMainMenu {
-                VStack{
-                    HStack{
-                        Spacer()
-                        MainMenu(showMainMenu: $showMainMenu)
+            .ignoresSafeArea()
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showMainMenu.toggle()
+                    } label: {
+                        Image(showMainMenu ? "close" : "burger menu")
                     }
-                    Spacer()
                 }
             }
         }
-        .ignoresSafeArea()
-        
     }
 }
-
-//struct MainView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MainView(authViewModel: AuthViewModel())
-//    }
-//}

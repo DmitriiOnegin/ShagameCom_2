@@ -12,25 +12,28 @@ struct TextFieldView: View {
     var subtitle: String
     
     @Binding var text: String
-    @State var isTapped = false
+   // @State var isTapped = false
     
     var body: some View {
         VStack(alignment: .leading, content: {
             
             HStack(spacing: 15){
                 TextField("", text: $text) { (status) in
-                    if status {
-                        withAnimation(.easeIn){
-                            isTapped = true
-                        }
-                    }
+//                    if status {
+//                     //   withAnimation(.easeIn){
+//                            isTapped = true
+//                      //  }
+//                    }
                 } onCommit: {
-                    if text == "" {
-                        withAnimation(.easeOut){
-                            isTapped = false
-                        }
-                    }
+//                    if text == "" {
+//                      //  withAnimation(.easeOut){
+//                            isTapped = false
+//                       // }
+//                    }
                 }
+                .font(fontMedium16)
+                .foregroundColor(.sh_basicGrey)
+                
                 if subtitle == "Пароль" {
                     Button {
                         
@@ -44,13 +47,14 @@ struct TextFieldView: View {
                     Image("outline-check-24px")
                 }
             }
-            .padding(.top, isTapped ? 9 : 0)
+//            .padding(.top, isTapped ? 9 : 0)
+            .padding(.top, 9)
             .background(
                 Text(subtitle)
-                    .font(fontLight12)
-                    .scaleEffect(1.3)
+                    .font(fontRegular12)
+                  //  .scaleEffect(1.3)
                     .offset(x: 10, y: -15)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.sh_basicGrey)
                 ,alignment: .leading
             )
         })

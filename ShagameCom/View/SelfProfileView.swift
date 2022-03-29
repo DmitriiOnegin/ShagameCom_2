@@ -31,17 +31,8 @@ struct SelfProfileView: View {
                 HeadBig(title: "")
                 
                 ZStack {
-                    ScrollView{
+                    ScrollView(showsIndicators: false){
                             VStack(spacing: 20)  {
-//                                Group{
-//                                    Text("Имя: \(viewModel.user.fullName)")
-//                                        .font(fontBold28)
-//                                    Text("Работа: \(viewModel.user.work)")
-//                                        .font(fontLight16)
-//                                    Text("Город: \(viewModel.user.town)")
-//                                        .font(fontMedium12)
-//                                        .foregroundColor(.customRed)
-//                                }
                                 Group{
                                     Text("Имя: \(viewModel.user.fullName)")
                                         .font(fontBold28)
@@ -54,19 +45,11 @@ struct SelfProfileView: View {
                                         .foregroundColor(.customGray)
                                         .foregroundColor(.customRed)
                                 }
-//                                NavigationLink {
-//                                    EditProfileView(viewModel: viewModel)
-//                                } label: {
-//                                    Text("Редактировать профиль")
-//                                }
                                 NavigationLink {
                                     EditProfileView(viewModel: viewModel)
                                 } label: {
                                     Image("btn - Edit Profile-4")
                                 }
-                                
-//                                Text("Статистика")
-//                                    .font(fontBold24)
                                 HStack(spacing: 10){
                                     Image("statistical 1")
                                     Text("Статистика")
@@ -75,21 +58,6 @@ struct SelfProfileView: View {
                                     Spacer()
                                 }.padding(.leading, 15)
                                 
-//                                HStack(spacing: 20){
-//                                    VStack(spacing: 10){
-//                                        Text("Пройденных \nшагов")
-//                                        Text("\(viewModel.user.countTotalSteps ?? 0)")
-//                                    }
-//                                    VStack(spacing: 10){
-//                                        Text("Прослушанных \nаудиобоксов")
-//                                        Text("\(viewModel.user.countListenBoxes ?? 0)")
-//                                        //  Text("\(viewModel.authViewModel.currentUser?.countListenBoxes ?? 0)")
-//                                    }
-//                                    VStack(spacing: 10){
-//                                        Text("Созданных \nаудиобоксов")
-//                                        Text("\(viewModel.user.countOwnBoxes ?? 0)")
-//                                    }
-//                                }
                                 HStack(spacing: 40){
                                     VStack(spacing: 10){
                                         Text("Пройденных \nшагов")
@@ -115,8 +83,6 @@ struct SelfProfileView: View {
                                     }
                                 }
                                 
-//                                Text("Мои аудиобоксы")
-//                                    .font(fontBold24)
                                 HStack{
                                     Text("Мои аудиобоксы")
                                         .font(fontBold24)
@@ -127,8 +93,6 @@ struct SelfProfileView: View {
                                 
                                 OwnAllBoxes(ownBoxes: viewModel.ownBoxes)
         
-//                                Text("Избранное")
-//                                    .font(fontBold24)
                                 HStack{
                                     Image("heart 2")
                                         .scaleEffect(1.5)
@@ -140,20 +104,7 @@ struct SelfProfileView: View {
                                     Spacer()
                                 }
                                 .padding(.leading, 15)
-                                
-//                                ScrollView(.horizontal, showsIndicators: false) {
-//                                    HStack(spacing: 20) {
-//                                        ForEach (viewModel.favoriteBoxes) { boxViewModel in
-//                                            NavigationLink {
-//                                                BoxMainView(viewModel: boxViewModel)
-//                                            } label: {
-//                                            BoxCellProfile(viewModel: boxViewModel)
-//                                            }
-//                                        }
-//                                    }
-//                                    .padding()
-//                                }
-                                
+                    
                                 ScrollView(.horizontal, showsIndicators: false) {
                                     HStack(spacing: 30) {
                                         ForEach (viewModel.favoriteBoxes) { boxViewModel in
@@ -172,11 +123,6 @@ struct SelfProfileView: View {
                             .padding(.top, 80)
                     }
                     VStack{
-//                        Text("")
-//                            .frame(width: WIDTH ,height: 100)
-//                            .background(
-//                                LinearGradient(gradient: Gradient(colors: [.white.opacity(1), .white.opacity(0)]), startPoint: .top, endPoint: .bottom))
-//                        Spacer()
                         Text("")
                             .frame(width: WIDTH ,height: 100)
                             .background(

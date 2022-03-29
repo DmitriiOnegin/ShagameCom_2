@@ -33,11 +33,7 @@ struct MainView: View {
                         } label: {
                             Text("fetchAllBoxes")
                         }
-                        Button {
-                            AuthViewModel.shared.signout()
-                        } label: {
-                            Text("LogOut")
-                        }
+                       
                     }
                     
                     .toolbar {

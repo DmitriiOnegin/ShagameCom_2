@@ -55,15 +55,15 @@ struct NotificationView: View {
     }
 }
 
-struct RigisterForListenView_Previews: PreviewProvider {
-    static var previews: some View {
-        ZStack{
-            Color.yellow
-                .ignoresSafeArea()
-            NotificationView(
-                              text: Notification.claimOk.notice.text,
-                              firstButtonImage: Notification.claimOk.notice.firstButtonImage,
-                              secondButtonImage: Notification.claimOk.notice.secondButtonImage)
-            }
-    }
-}
+//struct RigisterForListenView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ZStack{
+//            Color.yellow
+//                .ignoresSafeArea()
+//            NotificationView(
+//                              text: Notification.claimOk.notice.text,
+//                              firstButtonImage: Notification.claimOk.notice.firstButtonImage,
+//                              secondButtonImage: Notification.claimOk.notice.secondButtonImage)
+//            }
+//    }
+//}

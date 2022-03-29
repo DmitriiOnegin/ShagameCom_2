@@ -67,6 +67,7 @@
 		197A12F027A5967F003B3FBA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197A12EF27A5967F003B3FBA /* ContentView.swift */; };
 		197A12F227A59682003B3FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 197A12F127A59682003B3FBA /* Assets.xcassets */; };
 		197A12F527A59682003B3FBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 197A12F427A59682003B3FBA /* Preview Assets.xcassets */; };
+		199B17B527F34A46000794C4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B17B427F34A46000794C4 /* ProfileView.swift */; };
 		19A7846927C3816200238D45 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7846827C3816200238D45 /* LocationManager.swift */; };
 		19A7846B27C3872500238D45 /* AudiotekaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7846A27C3872500238D45 /* AudiotekaViewModel.swift */; };
 		19A7846D27C38E0800238D45 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7846C27C38E0800238D45 /* AnnotationView.swift */; };
@@ -145,6 +146,7 @@
 		197A12EF27A5967F003B3FBA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		197A12F127A59682003B3FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		197A12F427A59682003B3FBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		199B17B427F34A46000794C4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		19A7846827C3816200238D45 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		19A7846A27C3872500238D45 /* AudiotekaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiotekaViewModel.swift; sourceTree = "<group>"; };
 		19A7846C27C38E0800238D45 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				195A6BF727B518A3008527B4 /* Arslan */,
 				1973B19827B03799008ACE58 /* MainView.swift */,
 				1973B18E27B032E6008ACE58 /* SelfProfileView.swift */,
+				199B17B427F34A46000794C4 /* ProfileView.swift */,
 				1973B19027B03313008ACE58 /* AudiotekaView.swift */,
 				19E4F39E27E0CC14008CC815 /* SlideOverCard.swift */,
 				19E2650227E8AD710019EC8C /* SwipeView.swift */,
@@ -493,6 +496,7 @@
 				195A6BFB27B518EB008527B4 /* BackgroundImage.swift in Sources */,
 				19AE656E27BA97FE002527A7 /* BoxPlayerViewModel.swift in Sources */,
 				1948640127B7F1BF002C720E /* NewBoxesViewModel.swift in Sources */,
+				199B17B527F34A46000794C4 /* ProfileView.swift in Sources */,
 				1973B19927B03799008ACE58 /* MainView.swift in Sources */,
 				191D389627BE9AD40007645C /* BoxCellEdit.swift in Sources */,
 				19673B0427ABD08200C79631 /* NewBox.swift in Sources */,

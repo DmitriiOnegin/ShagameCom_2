@@ -11,15 +11,17 @@ import MapKit
 struct BoxPlayerView: View {
     
     let box: Box
+    let typePleerView: TypePleerView
     @ObservedObject var viewModel: BoxPlayerViewModel
    
     @State private var didSave = false
     @State private var didFetchAudio = false
     @State private var play = false
     
-    init(box: Box) {
+    init(box: Box, typePleerView: TypePleerView) {
         self.box = box
-        self.viewModel = BoxPlayerViewModel(box: box)
+        self.typePleerView = typePleerView
+        self.viewModel = BoxPlayerViewModel(box: box, typePleerView: typePleerView)
     }
     
     @Environment(\.presentationMode) var presentationMode
@@ -27,8 +29,8 @@ struct BoxPlayerView: View {
    
     @State private var showMainMenu = false
     
-    @State private var showList: Bool = false
-    @State private var showBoxes: Bool = false
+    
+   // @State private var typePleerView: TypePleerView = .map
     
     var body: some View {
         ZStack{
@@ -36,21 +38,48 @@ struct BoxPlayerView: View {
                 HeadLittle(title: viewModel.box.title)
                 
                 Map(coordinateRegion: $viewModel.region, showsUserLocation: true, userTrackingMode: .constant(viewModel.userTrackingMode), annotationItems:
-                        [viewModel.box]
+                        viewModel.locations + viewModel.marshrut
                   
-                ) { boxViewModel in
+                ) { location in
                     MapAnnotation(
                         coordinate:
-                            box.conditionLocationCL?.first ?? coordinateCentrMap,
+                            location.coordinate ,
                         anchorPoint: CGPoint(x: 0.5, y: 0.7)
                     ) {
-                        Button {
-                            
-                            
-                        } label: {
-                            AnnotationView(region: $viewModel.region)
-                        
+                        if location.identifier == "epizod" {
+                            if location.number == 1 {
+                                AnnotationView(region: $viewModel.region)
+                            } else {
+                            ZStack{
+                                Image(systemName: "circle.fill")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 50)
+                                    .foregroundColor( Color.red)
+                                    .scaleEffect(CGSize(width:  viewModel.scale,
+                                                        height:  viewModel.scale), anchor: .center)
+                            }
+                            }
                         }
+                        
+                        else {
+                            if location.identifier == "marshrut" {
+                                
+                                ZStack{
+                                    Image(systemName: "circle.fill")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 25)
+                                        .foregroundColor(.red)
+                                        .scaleEffect(CGSize(width:  viewModel.scale2,
+                                                            height:  viewModel.scale2), anchor: .center)
+                                    
+                                }
+                                
+                            }
+                        }
+                        
+                        
                     }
                 }
                 
@@ -82,6 +111,9 @@ struct BoxPlayerView: View {
                     Rectangle()
                         .fill(Color.white)
                         .cornerRadius(15, corners: [.topLeft,.topRight])
+                    switch viewModel.type {
+                    case .player:
+                    
                     VStack(spacing: 30){
                         HStack{
                             Text("00.45")
@@ -106,9 +138,13 @@ struct BoxPlayerView: View {
                             Text("-2.03")
                         }
                         .padding(.horizontal)
+                        Button {
+                            viewModel.type = .rating
+                        } label: {
                         Text(viewModel.box.title)
                             .foregroundColor(.sh_basicGrey)
                             .font(fontLight24)
+                        }
                         if didSave {
                             Button {
                                 viewModel.play()
@@ -121,9 +157,31 @@ struct BoxPlayerView: View {
                         
                     }
                     .padding()
+                        
+                    case .map:
+                        VStack(spacing: 30){
+                            Button {
+                                viewModel.type = .player
+                            } label: {
+                                Image("btn - CangeTypeToPlayer")
+                            }
+
+                        }
+                    case .rating:
+                        VStack(spacing: 30){
+                            Button {
+                                viewModel.type = .player
+                            } label: {
+                                Image("btn - setRating")
+                            }
+
+                        }
+                    }
                 }
-                .frame(width: WIDTH, height: HEIGHT / 2.85 / cooficient)
+                .frame(width: WIDTH, height: viewModel.type == .map ? HEIGHT / 6.1 / cooficient : HEIGHT / 2.85 / cooficient)
             }
+            
+            
             
             
             if showMainMenu {
@@ -141,4 +199,8 @@ struct BoxPlayerView: View {
 }
 
 
-    
+enum TypePleerView {
+    case map
+    case player
+    case rating
+}

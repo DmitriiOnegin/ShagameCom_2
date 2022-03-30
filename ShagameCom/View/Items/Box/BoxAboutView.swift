@@ -87,13 +87,13 @@ struct BoxAboutView: View {
                                     }.padding(.top, 20)
                                     VStack(spacing: 5){
                                         NavigationLink {
-                                            BoxMapView()
+                                            BoxPlayerView(box: viewModel.box, typePleerView: .map)
                                         } label: {
                                             Image("btn - Edit Profile-5")
                                         }
                                         
                                         NavigationLink {
-                                            BoxPlayerView(box: viewModel.box)
+                                            BoxPlayerView(box: viewModel.box, typePleerView: .player)
                                         } label: {
                                             Image("btn - Edit Profile-6")
                                         }

@@ -31,7 +31,7 @@ struct DetaleEditView: View {
                         VStack(spacing: 14) {
                            
                             TextFieldView(subtitle: "Название аудиобокса", text: $title)
-                            TextFieldView(subtitle: "Краткое описание", text: $description)
+                            MultilineTextField(text: $description, subtitle: "Краткое описание")
                         }
                         .frame(width: WIDTH * 0.91, height: 160)
                         

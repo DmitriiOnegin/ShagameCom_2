@@ -12,7 +12,8 @@ struct MainView: View {
     @EnvironmentObject var navigationViewModel: NavigationViewModel
     let authViewModel: AuthViewModel
     
-    @ObservedObject var viewModel = BoxesViewModel.shared
+    @EnvironmentObject var viewModel: BoxesViewModel
+    //@ObservedObject var viewModel = BoxesViewModel.shared
     
     @ObservedObject var viewModelScreen = DescriptionScreenViewModel()
     
@@ -64,7 +65,7 @@ struct MainView: View {
                     NavigationLink(isActive: $navigationViewModel.showLink, destination: {
                         switch navigationViewModel.navigation {
                         case .profile:
-                            SelfProfileView(authViewModel: authViewModel, allBoxes: viewModel.allBoxes)
+                            SelfProfileView(allBoxes: viewModel.allBoxes)
                         case .audioteka:
                             AudiotekaView(allBoxes: viewModel.allBoxes)
                         case .constructor:

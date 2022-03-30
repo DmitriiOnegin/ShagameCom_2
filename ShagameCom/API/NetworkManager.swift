@@ -329,8 +329,8 @@ class NetworkManager {
         }
     }
     
-   func fetchUser(user: User, complition: @escaping (Result<User, NetworkError>) -> Void) {
-        guard let uid = user.id else { return }
+   func fetchUser(userID: String?, complition: @escaping (Result<User, NetworkError>) -> Void) {
+        guard let uid = userID else { return }
         
         COLLECTION_USERS.document(uid).getDocument { snapshot, error in
             if error != nil {

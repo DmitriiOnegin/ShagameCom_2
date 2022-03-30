@@ -79,7 +79,7 @@ class SelfProfileViewModel: ObservableObject {
     
     func fetchUser() {
         guard let user = AuthViewModel.shared.currentUser else { return }
-        NetworkManager.shared.fetchUser(user: user) { result in
+        NetworkManager.shared.fetchUser(userID: user.id) { result in
             switch result {
             case .success(let user):
                 self.user = user

@@ -61,7 +61,7 @@ struct TextFieldView: View {
         
             .padding(.vertical,20)
             .padding(.horizontal)
-            .background(RoundedRectangle(cornerRadius: 5).strokeBorder())
+            .background(RoundedRectangle(cornerRadius: 5).strokeBorder().foregroundColor(.sh_basicGrey))
     }
 }
 

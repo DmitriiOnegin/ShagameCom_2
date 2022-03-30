@@ -91,6 +91,7 @@
 		19E4F39F27E0CC14008CC815 /* SlideOverCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E4F39E27E0CC14008CC815 /* SlideOverCard.swift */; };
 		9852372D27F249CB00938997 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9852372C27F249CB00938997 /* Notification.swift */; };
 		9852372F27F249D300938997 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9852372E27F249D300938997 /* NotificationView.swift */; };
+		98D824BC27F4CF1800DB327E /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D824BB27F4CF1800DB327E /* MultilineTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,6 +171,7 @@
 		19E4F39E27E0CC14008CC815 /* SlideOverCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOverCard.swift; sourceTree = "<group>"; };
 		9852372C27F249CB00938997 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		9852372E27F249D300938997 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		98D824BB27F4CF1800DB327E /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 				195A6C0C27B51988008527B4 /* TextFieldView.swift */,
 				195A6BFA27B518EB008527B4 /* BackgroundImage.swift */,
 				9852372E27F249D300938997 /* NotificationView.swift */,
+				98D824BB27F4CF1800DB327E /* MultilineTextField.swift */,
 				19A7846C27C38E0800238D45 /* AnnotationView.swift */,
 				19AE656627BA9484002527A7 /* Box */,
 			);
@@ -471,6 +474,7 @@
 				19A7846F27C3B24500238D45 /* ListAnnotationsView.swift in Sources */,
 				195A6C2027B5B08F008527B4 /* MapEditView.swift in Sources */,
 				19AE656527BA8A74002527A7 /* BoxCellMap.swift in Sources */,
+				98D824BC27F4CF1800DB327E /* MultilineTextField.swift in Sources */,
 				195A6C1727B535D6008527B4 /* LoadingScreen.swift in Sources */,
 				19673AFA27ABCA5800C79631 /* Navigation.swift in Sources */,
 				195A6C1527B52BA1008527B4 /* HeadSocial.swift in Sources */,

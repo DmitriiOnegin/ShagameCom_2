@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SwipeView<Content: View> : View{
+    
     @State var height: CGFloat = HEIGHT * 0.09
     @State var text: String = "ПОКАЗАТЬ СПИСОК"
     @State var isShow: Bool = true

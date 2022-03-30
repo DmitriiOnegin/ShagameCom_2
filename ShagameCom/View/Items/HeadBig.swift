@@ -9,6 +9,7 @@ import SwiftUI
 
 //let cooficient: CGFloat = HEIGHT / CGFloat(812)
 let cooficient = Double(HEIGHT) / Double(812)
+let cooficientW = Double(WIDTH) / Double(375)
 
 struct HeadBig: View {
     

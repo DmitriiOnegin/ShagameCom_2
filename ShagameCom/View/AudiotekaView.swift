@@ -96,12 +96,6 @@ struct AudiotekaView: View {
                 
             }
             
-//            ListAnnotationsView(viewModel: viewModel, showCellAnotationView: $showCellAnotationView, showList: $showList, getBox: $getBox)
-//                .offset(x: 0, y: showList ? 200 : HEIGHT - 60)
-//                .onTapGesture {
-//                    showList.toggle()
-//                }
-            
             VStack{
                 Spacer()
                 SwipeView{

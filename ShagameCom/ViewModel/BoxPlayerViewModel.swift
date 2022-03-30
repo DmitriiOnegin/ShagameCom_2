@@ -5,10 +5,10 @@
 //  Created by Dmitrii Onegin on 14.02.2022.
 //
 
-//import Foundation
-//import AVKit
+import AVKit
 //import MediaPlayer
-import AVFoundation
+import SwiftUI
+import MapKit
 
 class BoxPlayerViewModel: ObservableObject {
     
@@ -18,10 +18,16 @@ class BoxPlayerViewModel: ObservableObject {
     
     private let audioSession = AVAudioSession.sharedInstance()
     
+    let locationManager = LocationManager.shared
+    
+    @Published var region = MKCoordinateRegion()
+    @Published var span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+    @Published var userTrackingMode = MapUserTrackingMode.none
+    
     init(box: Box) {
         self.box = box
+        self.updateMapRegion(location: Mark(coordinate: box.conditionLocationCL?.first ?? coordinateCentrMap, identifier: ""))
         
-       
     }
     
     func setAudioSession() {
@@ -84,6 +90,19 @@ class BoxPlayerViewModel: ObservableObject {
     }
     
 }
+
+// MARK: Private Methods
+extension BoxPlayerViewModel {
+    private func updateMapRegion(location: Mark) {
+        withAnimation(.easeInOut) {
+            region = MKCoordinateRegion(
+                center: location.coordinate,
+                span: span
+            )
+        }
+    }
+}
+
 
 
 

@@ -26,6 +26,7 @@ let fontMedium10 = Font.system(size: 10, weight: .medium)
 let fontRegular16 = Font.system(size: 16, weight: .regular)
 let fontRegular12 = Font.system(size: 12, weight: .regular)
 let fontRegular8 = Font.system(size: 8, weight: .regular)
+let fontLight24 = Font.system(size: 24, weight: .light)
 let fontLight16 = Font.system(size: 16, weight: .light)
 let fontLight12 = Font.system(size: 12, weight: .light)
 

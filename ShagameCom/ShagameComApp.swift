@@ -29,6 +29,7 @@ struct ShagameComApp: App {
             ContentView()
                 .environmentObject(AuthViewModel.shared)
                 .environmentObject(NavigationViewModel())
+                .environmentObject(BoxesViewModel.shared)
         }
     }
 }

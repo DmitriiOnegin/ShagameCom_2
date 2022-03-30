@@ -37,6 +37,7 @@ class BoxViewModel: ObservableObject, Identifiable {
     func checkBox(){
         checkIfUserIsFavoritBox()
         checkIfUserDidOpenBox()
+        fetchUser()
 //
 //        fetchOwnerData()
 //
@@ -126,6 +127,17 @@ class BoxViewModel: ObservableObject, Identifiable {
     func editViewsBox() {
         box.totalViews += 1
         editBoxData()
+    }
+    
+    private func fetchUser() {
+        NetworkManager.shared.fetchUser(userID: box.ownerUid) { result in
+            switch result {
+            case .success(let user):
+                self.box.ownerUser = user
+            case .failure(_):
+                do {}
+            }
+        }
     }
     
 }

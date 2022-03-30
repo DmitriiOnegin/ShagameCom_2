@@ -71,7 +71,6 @@
 		19A7846927C3816200238D45 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7846827C3816200238D45 /* LocationManager.swift */; };
 		19A7846B27C3872500238D45 /* AudiotekaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7846A27C3872500238D45 /* AudiotekaViewModel.swift */; };
 		19A7846D27C38E0800238D45 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7846C27C38E0800238D45 /* AnnotationView.swift */; };
-		19A7846F27C3B24500238D45 /* ListAnnotationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7846E27C3B24500238D45 /* ListAnnotationsView.swift */; };
 		19A7847327C3D29A00238D45 /* MapEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7847227C3D29A00238D45 /* MapEditViewModel.swift */; };
 		19A7847527C3D3AB00238D45 /* ViewAddMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7847427C3D3AB00238D45 /* ViewAddMark.swift */; };
 		19A7847727C3D42F00238D45 /* ArtCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7847627C3D42F00238D45 /* ArtCreator.swift */; };
@@ -151,7 +150,6 @@
 		19A7846827C3816200238D45 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		19A7846A27C3872500238D45 /* AudiotekaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiotekaViewModel.swift; sourceTree = "<group>"; };
 		19A7846C27C38E0800238D45 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
-		19A7846E27C3B24500238D45 /* ListAnnotationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAnnotationsView.swift; sourceTree = "<group>"; };
 		19A7847227C3D29A00238D45 /* MapEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEditViewModel.swift; sourceTree = "<group>"; };
 		19A7847427C3D3AB00238D45 /* ViewAddMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAddMark.swift; sourceTree = "<group>"; };
 		19A7847627C3D42F00238D45 /* ArtCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtCreator.swift; sourceTree = "<group>"; };
@@ -297,7 +295,6 @@
 				1973B19027B03313008ACE58 /* AudiotekaView.swift */,
 				19E4F39E27E0CC14008CC815 /* SlideOverCard.swift */,
 				19E2650227E8AD710019EC8C /* SwipeView.swift */,
-				19A7846E27C3B24500238D45 /* ListAnnotationsView.swift */,
 				19AE655F27BA7CB4002527A7 /* ConstructorView */,
 				1973B19427B0333B008ACE58 /* SupportView.swift */,
 				1973B19627B03354008ACE58 /* AboutProjectView.swift */,
@@ -471,7 +468,6 @@
 				9852372F27F249D300938997 /* NotificationView.swift in Sources */,
 				195A6C2227B6BA69008527B4 /* HeadLittle.swift in Sources */,
 				19A7847927C3D49100238D45 /* ArtCreatorViewModel.swift in Sources */,
-				19A7846F27C3B24500238D45 /* ListAnnotationsView.swift in Sources */,
 				195A6C2027B5B08F008527B4 /* MapEditView.swift in Sources */,
 				19AE656527BA8A74002527A7 /* BoxCellMap.swift in Sources */,
 				98D824BC27F4CF1800DB327E /* MultilineTextField.swift in Sources */,

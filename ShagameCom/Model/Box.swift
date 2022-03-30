@@ -33,6 +33,7 @@ struct Box: Identifiable, Decodable {
     var didFavorite: Bool? = false
     var didOpen: Bool? = false
     var canSave: Bool? = false
+    var ownerUser: User? = User.getUser()
     
     var conditionLocationCL: [CLLocationCoordinate2D]? {
         conditionLocation.map {

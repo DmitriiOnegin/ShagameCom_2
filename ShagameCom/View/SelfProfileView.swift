@@ -9,8 +9,6 @@ import SwiftUI
 
 struct SelfProfileView: View {
     
-    let authViewModel: AuthViewModel
-    
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var navigationViewModel: NavigationViewModel
     
@@ -18,8 +16,7 @@ struct SelfProfileView: View {
    
     @State private var showMainMenu = false
     
-    init(authViewModel: AuthViewModel, allBoxes: [BoxViewModel]) {
-        self.authViewModel = authViewModel
+    init(allBoxes: [BoxViewModel]) {
         self.viewModel = SelfProfileViewModel(allBoxes: allBoxes)
     }
     
@@ -39,9 +36,9 @@ struct SelfProfileView: View {
                                     Text("Работа: \(viewModel.user.work)")
                                         .font(fontLight16)
                                         .foregroundColor(.customGray)
+                                    Image("shg tag sm")
                                     Text("Город: \(viewModel.user.town)")
                                         .font(fontMedium12)
-                                        .foregroundColor(.customGray)
                                         .foregroundColor(.customRed)
                                 }
                                 NavigationLink {

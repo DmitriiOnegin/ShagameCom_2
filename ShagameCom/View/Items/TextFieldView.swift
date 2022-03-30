@@ -50,10 +50,11 @@ struct TextFieldView: View {
 //            .padding(.top, isTapped ? 9 : 0)
             .padding(.top, 9)
             .background(
+                
                 Text(subtitle)
                     .font(fontRegular12)
                   //  .scaleEffect(1.3)
-                    .offset(x: 10, y: -15)
+                   // .offset(x: 10, y: -15)
                     .foregroundColor(.sh_basicGrey)
                 ,alignment: .leading
             )
@@ -61,7 +62,7 @@ struct TextFieldView: View {
         
             .padding(.vertical,20)
             .padding(.horizontal)
-            .background(RoundedRectangle(cornerRadius: 5).strokeBorder().foregroundColor(.sh_basicGrey))
+            .background(RoundedRectangle(cornerRadius: 5).strokeBorder() .foregroundColor(.sh_basicGrey))
     }
 }
 

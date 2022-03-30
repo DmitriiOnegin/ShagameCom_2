@@ -24,7 +24,7 @@ struct BoxAboutView: View {
         
         ZStack{
             VStack(spacing: 0){
-                HeadLittle(title: "Ахматова: я была дерзкой")
+                HeadLittle(title: viewModel.box.title)
                 ScrollView{
                    
                         VStack{
@@ -42,22 +42,26 @@ struct BoxAboutView: View {
                                         .padding(.top, 9)
                                         .padding(.bottom, 9)
                                     VStack(spacing: 15){
-                                        Text("Ахматова: я была дерзкой")
+                                        Text(viewModel.box.title)
+                                            .multilineTextAlignment(.center)
                                             .font(fontBold16)
-                                            .foregroundColor(.customGray)
-                                        Text("Спектакль начинается\nвоспоминаниями о черноморском\nдетстве Ахматовой, сменяется\nюношеской любовью Анны и приводит\nк страшным событиям 30-х\nгодов двадцатого века.")
+                                        Text(viewModel.box.description)
                                             .multilineTextAlignment(.center)
                                             .font(fontLight16)
-                                            .foregroundColor(.customGray)
                                     }
+                                    .foregroundColor(.customGray)
+                                    .padding(.horizontal, 45)
+                                    
                                     VStack(spacing: 10){
                                         Image("Group")
                                         Text("Автор")
                                             .font(fontBold16)
                                             .foregroundColor(.customGray)
                                     }.padding(.top, 20)
-                                    Button(action: {}) {
-                                        Text("Дина Верютина")
+                                    NavigationLink {
+                                        ProfileView(user: viewModel.box.ownerUser ?? User.getUser())
+                                    } label: {
+                                        Text(viewModel.box.ownerUser?.fullName ?? "")
                                             .underline(true, color: .customGray)
                                             .font(fontLight16)
                                             .foregroundColor(.customGray)
@@ -77,18 +81,19 @@ struct BoxAboutView: View {
                                         Image("Vector 1")
                                         Text("Автор предлагает маршрут\nк этому аудиобоксу")
                                             .multilineTextAlignment(.center)
+                                            .lineLimit(2)
                                             .font(fontLight16)
                                             .foregroundColor(.customRed)
                                     }.padding(.top, 20)
                                     VStack(spacing: 5){
                                         NavigationLink {
-                                            BoxMapView()
+                                            BoxPlayerView(box: viewModel.box, typePleerView: .map)
                                         } label: {
                                             Image("btn - Edit Profile-5")
                                         }
                                         
                                         NavigationLink {
-                                            BoxPlayerView(box: viewModel.box)
+                                            BoxPlayerView(box: viewModel.box, typePleerView: .player)
                                         } label: {
                                             Image("btn - Edit Profile-6")
                                         }

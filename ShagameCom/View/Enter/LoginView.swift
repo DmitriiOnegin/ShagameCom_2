@@ -45,7 +45,7 @@ struct LoginView: View {
                 }
                 .padding(.trailing,15)
             } .padding(.bottom,40)
-            
+            //
             Button {
                 viewModel.login(withEmail: email, password: password)
             } label: {

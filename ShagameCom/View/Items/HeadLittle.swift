@@ -11,6 +11,7 @@ struct HeadLittle: View {
     
     let title: String
     let cooficient = Double(HEIGHT) / Double(812)
+    let cooficientW = Double(WIDTH) / Double(375)
     
     var body: some View {
         ZStack{

@@ -21,9 +21,6 @@ struct NotificationView: View {
     var body: some View {
         VStack{
             Spacer()
-
-            
-            
             VStack(alignment: .center){
                 VStack(alignment: .center, spacing: 20){
                 Image("attention")

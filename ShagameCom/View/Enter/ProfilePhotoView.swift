@@ -43,7 +43,7 @@ struct ProfilePhotoView: View {
                 .frame(width: WIDTH * 0.11 * cooficient, height: WIDTH * 0.11 * cooficient)
                 .overlay (Image("Image"))
             }
-            .offset(x: 65 * cooficient, y: 60 * cooficient)
+            .offset(x: 55 * cooficient, y: 55 * cooficient)
             }.frame(width: WIDTH * 0.46 * cooficient, height: WIDTH * 0.46 * cooficient)
         }
     }

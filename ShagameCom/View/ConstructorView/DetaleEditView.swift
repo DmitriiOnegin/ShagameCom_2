@@ -22,7 +22,7 @@ struct DetaleEditView: View {
     var body: some View {
         ZStack{
             
-            VStack(spacing: 0) {
+            VStack(alignment: .center, spacing: 0) {
                 HeadLittle(title: "Публикация аудиобокса")
                 
                 ScrollView{
@@ -31,33 +31,60 @@ struct DetaleEditView: View {
                         VStack(spacing: 14) {
                            
                             TextFieldView(subtitle: "Название аудиобокса", text: $title)
-                                
-                                
-                            TextFieldView(subtitle: "Краткое описание", text: $description)
+                            MultilineTextField(text: $description, subtitle: "Краткое описание")
                         }
                         .frame(width: WIDTH * 0.91, height: 160)
                         
                         HStack{
                             Spacer()
-                            Button {
-                                viewModel.addImageData()
-                            } label: {
+                            
                                 VStack{
-                                    Text(viewModel.newBox.audioData != Data() ? "Аудио добавлено" : "Аудио НЕ добавлено")
-                                    Text("Добавить обложку")
-                                        .foregroundColor(viewModel.newBox.imageData != Data() ? .green : .blue)
+                                   // Text(viewModel.newBox.audioData != Data() ? "Аудио добавлено" : "Аудио НЕ добавлено")
+                                    ZStack{
+                                        Image("TestImage")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: WIDTH * 0.24, height: WIDTH * 0.24 * 1.52)
+                                            .clipShape(RoundedRectangle(cornerRadius: 23))
+                                        Button {
+                                                viewModel.addImageData()
+                                        } label: {
+                                            Circle()
+                                            .foregroundColor(Color(UIColor(red: 185/255, green: 26/255, blue: 24/255, alpha: 1)))
+                                            .frame(width: WIDTH * 0.11 * cooficient, height: WIDTH * 0.11 * cooficient)
+                                            .overlay (Image("Image"))
+                                        }
+                                        .offset(x: 45 * cooficient, y: 55 * cooficient)
+                                    }
+                                    Text("Изменить обложку")
+                                        .font(fontRegular12)
+                                        .foregroundColor(.sh_basicGrey)
                                 }
-                            }
+                            
                             Spacer()
                             
                             NavigationLink {
                                 MapEditView(viewModel: viewModel)
                             } label: {
                                 VStack{
-                                    Text("Добавить")
-                                    Text("Маршрут")
+                                ZStack{
+                                    Image("Mask Group-2")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: WIDTH * 0.24, height: WIDTH * 0.24 * 1.52)
+                                        .clipShape(RoundedRectangle(cornerRadius: 23))
+                                    Button(action: {}) {
+                                            Circle()
+                                            .foregroundColor(Color(UIColor(red: 185/255, green: 26/255, blue: 24/255, alpha: 1)))
+                                            .frame(width: WIDTH * 0.11 * cooficient, height: WIDTH * 0.11 * cooficient)
+                                            .overlay (Image("Choose navigate"))
+                                        }
+                                    .offset(x: 45 * cooficient, y: 55 * cooficient)
+                                    }
+                                    Text("Изменить маршрут")
+                                        .font(fontRegular12)
+                                        .foregroundColor(.sh_basicGrey)
                                 }
-                                .foregroundColor(viewModel.newBox.conditionLocation.isEmpty ? .blue : .green)
                             }
 
 //                            Button {
@@ -69,22 +96,34 @@ struct DetaleEditView: View {
 //                                }
 //                                .foregroundColor(viewModel.newBox.conditionLocation.isEmpty ? .blue : .green)
 //                            }
-                            Spacer()
+                            Spacer(minLength: 40 * cooficientW)
                         }
                         
+                        HStack(spacing: 30){
+                                Toggle(isOn: $viewModel.newBox.oldCondition){
+                                    
+                                }.toggleStyle(SwitchToggleStyle(tint: .sh_basicRed))
+                                HStack(spacing: 20){
+
+                                    Text("Аудиобокс не подходит для\nслушателей младше 18 лет")
+                                        .font(fontMedium12)
+                                        .foregroundColor(.sh_basicGrey)
+                                        .multilineTextAlignment(.leading)
+                                        .frame(width: 170)
+                                    Button(action: {
+                                        //NotoficationView
+                                        
+                                    }) {
+                                        Image("Info")
+                                            .frame(width: 24, height: 24)
+                                    }
+                                }
+                                .frame(width: 199, height: 35)
+                                Spacer(minLength: 40 * cooficientW)
+                        }.frame(height: 35)
+                     
                         
-                        HStack{
-                            
-                            Toggle(isOn: $viewModel.newBox.oldCondition) {
-                               
-                            }
-                            
-                            VStack{
-                                Text("18 лет")
-                            }
-                            Spacer()
-                        }
-                        HStack{
+                        HStack(spacing: 30){
                             Button {
                                 mainCondition.toggle()
                             } label: {
@@ -92,7 +131,11 @@ struct DetaleEditView: View {
                             }
                             
                             VStack{
-                                Text("Принять условия поьзовательского соглашения")
+                                Text("Я принимаю условия Пользовательского\nсоглашения и даю согласие на обработку\nмоих персональных данных в соответствии\nс Политикой конфиденциальности.")
+                                    .font(fontMedium12)
+                                    .foregroundColor(.sh_basicGrey)
+                                    .multilineTextAlignment(.leading)
+                                    .frame(width: 240)
                             }
                             
                         }
